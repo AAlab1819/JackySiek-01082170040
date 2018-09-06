@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    long long A;//crystal yellow
+    long long B;//crystal blue
+
+    long long x,y,z;
+    int hasil=0;
+    cin>>A>>B;
+    cin>>x>>y>>z;
+    if(A<(2*x+y))
+    {
+      hasil=hasil+((2*x+y)-A);
+    }
+    if(B<(y+3*z))
+    {
+        hasil=hasil+((y+3*z)-B);
+    }
+    cout<<hasil;
+    return 0;
+}
