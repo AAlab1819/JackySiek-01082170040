@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int numer, denom,number;
+    cin>>number;
+    //jika genap
+    if(number%2==0)
+    {
+        numer = ((number/2)-1);
+        denom = ((number/2)+1);
+    if(numer%2==0 && denom%2==0)//kalau di genap masih bisa reducible
+    {
+        numer--;
+        denom++;
+    }
+    }
+    //jika ganjil
+    if(number%2==1)
+    {
+        numer = ((number/2));
+        denom = (number - numer);
+    }
+    cout<<numer<<" "<<denom;
+    return 0;
+
+}
