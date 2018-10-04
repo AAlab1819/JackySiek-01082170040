@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int input;
+    map <string, int> accOfPasswords;
+    string pass;
+    cin >> input;
+    for (int i=0; i<input; i++)
+    {
+        cin>>pass;
+        if (accOfPasswords.count(pass) == 1)
+        {
+            cout<<pass<<accOfPasswords[pass]<<endl;
+            accOfPasswords[pass]++;
+        }
+        else
+        {
+            cout<<"OK"<<endl;
+            accOfPasswords[pass] = 1;
+        }
+    }
+    return 0;
+}
