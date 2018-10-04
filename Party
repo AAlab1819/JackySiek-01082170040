@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int staff, nextDepth, check, group = 0;
+
+    cin>>staff;
+
+    int immediateBoss[staff];
+
+    for (int i=1; i<=staff; i++)
+
+    {
+        cin>>immediateBoss[i];
+    }
+    for (int i=1; i<=staff; i++)
+    {
+    nextDepth = 1;
+
+    check = immediateBoss[i];
+
+    while (check!=-1)
+    {
+            nextDepth++;
+            check = immediateBoss[check];
+        }
+        group = max(nextDepth, group);
+    }
+    cout<<group<<endl;
+}
