@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int verify, parent, leaves;
+    bool isSpruce = true;
+    cin >> verify;
+    map <int, vector <int> > tree;
+    for(int i = 2; i <= verify; i++)
+    {
+    cin >> parent;
+        tree[parent].push_back(i);
+    }
+    for(int i = 1; i <= verify; i++)
+    {
+        if(tree[i].size() == 0)
+        {
+            continue;
+        }
+        else {
+            leaves = 0;
+        for(int j = 0 ; j < tree[i].size(); j++)
+            {
+                if(tree[tree[i][j]].size() == 0)
+                {
+                    leaves++;
+                }
+            }
+            if(leaves<3)
+            {
+               isSpruce = false;
+            }
+        }
+    }
+    if(isSpruce)
+        cout << "YES";
+    else
+        cout << "NO";
+    return 0;
+}
